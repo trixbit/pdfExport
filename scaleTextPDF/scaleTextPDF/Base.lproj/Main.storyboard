@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1D-FV-VQu">
+                                <rect key="frame" x="230" y="80" width="140" height="160"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xzC-pA-WiW">
+                                        <rect key="frame" x="0.0" y="8" width="140" height="49.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92602568864822388" green="0.95655161142349243" blue="0.075322858989238739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xzC-pA-WiW" firstAttribute="width" secondItem="k1D-FV-VQu" secondAttribute="width" id="NMT-wc-il3"/>
+                                    <constraint firstItem="xzC-pA-WiW" firstAttribute="top" secondItem="k1D-FV-VQu" secondAttribute="top" constant="8" id="PYO-i1-H9Y"/>
+                                    <constraint firstItem="xzC-pA-WiW" firstAttribute="centerX" secondItem="k1D-FV-VQu" secondAttribute="centerX" id="SeE-A7-DNq"/>
+                                    <constraint firstAttribute="width" secondItem="k1D-FV-VQu" secondAttribute="height" multiplier="7:8" id="VaQ-P1-JXm"/>
+                                    <constraint firstAttribute="height" constant="160" id="WHb-oD-SNw"/>
+                                    <constraint firstAttribute="width" constant="140" id="uIg-CS-xWx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F14-oC-j17">
+                                <rect key="frame" x="190" y="550" width="221" height="30"/>
+                                <animations/>
+                                <state key="normal" title="export and mail textView as PDF"/>
+                                <connections>
+                                    <action selector="exportAndMailPDF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Zx-no-fBP"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dhM-PE-2tF">
+                                <rect key="frame" x="253" y="513" width="94" height="29"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="fontStepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NUn-ke-At7"/>
+                                </connections>
+                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBY-3h-1qr">
+                                <rect key="frame" x="252" y="475" width="96" height="30"/>
+                                <animations/>
+                                <state key="normal" title="make Papyrus"/>
+                                <connections>
+                                    <action selector="makePapyrus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vz-by-YYT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XW-SE-YrN">
+                                <rect key="frame" x="259" y="437" width="83" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="make Times"/>
+                                <connections>
+                                    <action selector="makeTimes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rL1-Hc-Qux"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXw-40-imq">
+                                <rect key="frame" x="229" y="399" width="142" height="30"/>
+                                <animations/>
+                                <state key="normal" title="make Helvetica-Bold"/>
+                                <connections>
+                                    <action selector="makeHelveticaBold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPx-kV-a47"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.77434664964675903" green="0.8334348201751709" blue="0.94565469026565552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F14-oC-j17" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4H5-QS-BBB"/>
+                            <constraint firstItem="IBY-3h-1qr" firstAttribute="top" secondItem="5XW-SE-YrN" secondAttribute="bottom" constant="8" id="8Co-YT-3t4"/>
+                            <constraint firstItem="k1D-FV-VQu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="99h-My-yft"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F14-oC-j17" secondAttribute="bottom" constant="20" id="GQA-Td-Mcb"/>
+                            <constraint firstItem="dhM-PE-2tF" firstAttribute="top" secondItem="IBY-3h-1qr" secondAttribute="bottom" constant="8" id="JGh-Ls-c1z"/>
+                            <constraint firstItem="5XW-SE-YrN" firstAttribute="top" secondItem="KXw-40-imq" secondAttribute="bottom" constant="8" id="Qfn-Uv-zUX"/>
+                            <constraint firstItem="IBY-3h-1qr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="REz-kY-uWP"/>
+                            <constraint firstItem="5XW-SE-YrN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXh-7A-1n8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="k1D-FV-VQu" secondAttribute="bottom" constant="412" id="hJ8-TF-Yio"/>
+                            <constraint firstItem="dhM-PE-2tF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jFe-1U-L9A"/>
+                            <constraint firstItem="k1D-FV-VQu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="oLr-PH-gH7"/>
+                            <constraint firstItem="F14-oC-j17" firstAttribute="top" secondItem="dhM-PE-2tF" secondAttribute="bottom" constant="8" id="pzY-z5-Vbc"/>
+                            <constraint firstItem="KXw-40-imq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qxP-VU-XcL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hJ8-TF-Yio"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="xzC-pA-WiW" id="P54-w6-VI7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="337"/>
+        </scene>
+    </scenes>
+</document>
