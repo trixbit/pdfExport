@@ -10,7 +10,9 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController ()
+#import "UITextView+PDFExporter.h"
+
+@interface ViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 - (IBAction)fontStepperChanged:(UIStepper *)sender;
@@ -61,6 +63,7 @@
   //once scaled up, the width of the final pdf will be exactly 1008 pixels
   
   //generate pdf code here
+  NSData *pdfData = [self.textView PDFData];
   
   //then generate email and send here:
   if([MFMailComposeViewController canSendMail]) {
@@ -70,9 +73,11 @@
    //
     
     NSString *fileName = @"test";
-    fileName = [fileName stringByAppendingPathExtension:@"png"];
+    fileName = [fileName stringByAppendingPathExtension:@"pdf"];
+      
+      
     //replace with pdf something
-    //[mailCont addAttachmentData:jpegData mimeType:@"image/png" fileName:fileName];
+   [mailCont addAttachmentData:pdfData mimeType:@"application/pdf" fileName:fileName];
     
     [mailCont setSubject:@"test pdf"];
     [mailCont setToRecipients:[NSArray arrayWithObject:@"matthewmcclure@gmail.com"]];
@@ -81,6 +86,18 @@
     [self presentViewController:mailCont animated:YES completion:nil];
   }
 
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (result == MFMailComposeResultCancelled)
+        NSLog(@"Message cancelled");
+    else if (result == MFMailComposeResultSent)
+        NSLog(@"Message sent");
+    else
+        NSLog(@"Message failed");
 }
 
 - (IBAction)makeHelveticaBold:(UIButton *)sender {
